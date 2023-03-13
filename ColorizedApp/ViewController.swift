@@ -25,9 +25,10 @@ class ViewController: UIViewController {
 
     @IBAction func rgbSlider(_ sender: Any) {
        setColor()
+       setValue()
     }
     
-    // MARK: - Функция для установления цвета слайдерами.
+    // MARK: - Функция для установления цвета colorView слайдерами.
     private func setColor() {
         colorView.backgroundColor = UIColor(
             red: CGFloat(redSlider.value),
@@ -35,5 +36,15 @@ class ViewController: UIViewController {
             blue: CGFloat(blueSlider.value),
             alpha: 1)
     }
+    
+    // MARK: - Функция для изменения значений цифровых Label.
+    private func setValue() {
+        redLabel.text = String(format: "%.2f", redSlider.value)
+        greenLabel.text = String(format: "%.2f", greenSlider.value)
+        blueLabel.text = String(format: "%.2f", blueSlider.value)
+    }
+    
+    
+    
 }
 
